@@ -1,0 +1,39 @@
+.form-inline {
+  position: relative;
+  top: 20px;
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+}
+.name {
+  position: fixed;
+  top: 70px;
+  left: 20%;
+  font-weight: 800;
+  font-size: 30px;
+  color: cadetblue;
+}
+.temp {
+  position: fixed;
+  top: 70px;
+  right: 20%;
+  font-weight: 800;
+  font-size: 30px;
+  color: cadetblue;
+}
+.card {
+  position: relative;
+  top: 60px;
+  margin: 10px auto;
+}
+h4 {
+  position: relative;
+  top: 50px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 25px;
+  color: rgb(27, 62, 63);
+}
+input {
+  text-align: center;
+}

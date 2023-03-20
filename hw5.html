@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link href="src/stylew5.css"  rel="stylesheet"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/24462debb2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  
+  </head>
+
+  <body>
+    <div class="container">
+      <form class="form-inline">
+        <div class="form-group">
+          <input
+            type="text"
+            id="inputCity"
+            class="form-control mx-sm-3"
+            aria-describedby="passwordHelpInline"
+            placeholder="Search for your city!"
+            autofocus
+          />
+        </div>
+      </form>
+      <span class="name">
+        Tehran
+      </span>
+      <span class="temp">
+        <span class="number">23</span> C° 
+      </span>
+    </br>
+    
+  </br>
+  <h4><span class="day">monday</span> <span class="hour">30</span> : <span class="minute">29</span></h4>
+
+          
+        </div>
+    
+      <script >
+        let now = new Date();
+let day = document.querySelector(".day");
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+day.innerHTML = days[now.getDay()];
+let hour = document.querySelector(".hour");
+hour.innerHTML = now.getHours();
+let minute = document.querySelector(".minute");
+minute.innerHTML = now.getMinutes();
+
+        let name = document.querySelector(".name");
+
+function searchCity(event) {
+  event.preventDefault();
+  let input = document.querySelector("#inputCity");
+  name.innerHTML = input.value;
+  let apiKey = "b95f179627c8dd37f41e1be6e3250e19";
+  let apiRes = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${apiKey}&units=metric`;
+
+  function temp(response) {
+    let currTemp = Math.round(response.data.main.temp);
+    let temp = document.querySelector(".number");
+    temp.innerHTML = currTemp;
+  }
+
+  function getTemp() {
+    axios.get(apiRes).then(temp);
+  }
+
+  getTemp();
+}
+
+let form = document.querySelector(".form-inline");
+form.addEventListener("submit", searchCity);
+
+
+      </script>
+    
+  </body>
+</html>

@@ -1,0 +1,57 @@
+body {
+  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
+}
+h1 {
+  font-size: 34px;
+  font-weight: 900;
+  text-align: center;
+}
+h2 {
+  color: #8064e9;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 900;
+  margin: 0 auto;
+}
+p {
+  font-size: 18px;
+  line-height: 28px;
+  font-family: "Source Code Pro", monospace;
+  text-align: center;
+  margin-bottom: 50px;
+}
+button {
+  color: white;
+  background-color: #8064e9;
+  display: block;
+  margin: 0 auto;
+  padding: 16px 24px;
+  border-radius: 40%;
+  border: solid;
+  border-color: #8064e9;
+}
+button:hover {
+  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+  cursor: pointer;
+}
+.des {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 28px;
+  font-family: "Source Code Pro", monospace;
+  text-align: center;
+  margin-bottom: 30px;
+}
+header,
+.des {
+  background-color: aquamarine;
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+img {
+  display: block;
+  margin: auto;
+  margin-bottom: 40px;
+}
