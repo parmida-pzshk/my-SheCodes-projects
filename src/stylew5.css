@@ -5,9 +5,15 @@
   margin: 0 auto;
   max-width: 70%;
 }
+h1 {
+  font-weight: 800;
+  font-size: 30px;
+  color: cadetblue;
+  text-align: center;
+}
 .name {
   position: fixed;
-  top: 70px;
+  top: 130px;
   left: 20%;
   font-weight: 800;
   font-size: 30px;
@@ -15,7 +21,7 @@
 }
 .temp {
   position: fixed;
-  top: 70px;
+  top: 130px;
   right: 20%;
   font-weight: 800;
   font-size: 30px;
@@ -36,4 +42,26 @@ h4 {
 }
 input {
   text-align: center;
+}
+.dedication {
+  position: relative;
+  top: 45px;
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-weight: 700;
+  color: purple;
+  background-color: rgb(130, 195, 196);
+  padding: 20px;
+  max-width: 60%;
+  border-radius: 15px;
+  box-shadow: rgb(27, 62, 63), 10px;
+}
+.nik {
+  max-width: 70%;
+  height: 320px;
+  position: relative;
+  top: 60px;
+  display: block;
+  margin: auto;
 }
