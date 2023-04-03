@@ -1,14 +1,10 @@
+.page {
+  margin-top: 30px;
+}
 .form-inline {
-  position: relative;
-  top: 20px;
   display: block;
   margin: 0 auto;
   max-width: 70%;
-}
-.btn {
-  position: relative;
-  top: 18px;
-  left: 10%px;
 }
 h1 {
   font-weight: 800;
@@ -16,18 +12,13 @@ h1 {
   color: cadetblue;
   text-align: center;
 }
-.name {
-  position: fixed;
-  top: 130px;
-  left: 20%;
-  font-weight: 800;
-  font-size: 30px;
-  color: cadetblue;
+ul {
+  list-style-type: none;
 }
-.temp {
-  position: fixed;
-  top: 130px;
-  right: 20%;
+.main {
+  position: relative;
+  top: 50px;
+
   font-weight: 800;
   font-size: 30px;
   color: cadetblue;
@@ -75,4 +66,7 @@ input {
 }
 .github:hover {
   text-decoration: underline;
+}
+.icon {
+  width: 80px;
 }

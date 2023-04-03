@@ -19,10 +19,10 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1>Welcome to this international weather app</h1>
+    <div class="page container-fluid">
+    
       <div class="container text-center">
-  <div class="row align-items-start">
+  <div class=" row align-items-start">
       <div class="col-8">
       <form class="form-inline">
         <div class="form-group">
@@ -43,14 +43,20 @@
       </div>
   </div>
       </div>
-      <div class="container-md">
-      <span class="name">
-        Tehran
-      </span>
-      <span class="temp">
-        <span class="number">23</span> C° 
-      </span>
-    </div>
+  <div class="container text-center">
+  <div class="main row align-items-center">
+      <div class="col-8">
+        <div class="row name">Tehran</div>
+          <div class="row description">clear sky</div>  
+          <div class="row icon"><img id="img" src="http://openweathermap.org/img/wn/01n@2x.png" class="icon"></div>
+      </div>
+      <div class="col-2">
+        <div class="row number">23</div>
+        <div class="row wind">23</div>
+        
+      </div>
+  </div>
+  </div>
     </br>
     
   </br>
@@ -81,18 +87,34 @@ let minute = document.querySelector(".minute");
 minute.innerHTML = now.getMinutes();
 
         let name = document.querySelector(".name");
+        let tempe = document.querySelector(".number");
+        let wind = document.querySelector(".wind");
+        let description = document.querySelector(".description")
+        let icon = document.querySelector(".icon")
+        let imgDiv = document.getElementById( "img" ); // access the image using id
 
 function searchCity(event) {
   event.preventDefault();
   let input = document.querySelector("#inputCity");
-  name.innerHTML = input.value;
+  let editedInput = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+  name.innerHTML = editedInput;
   let apiKey = "b95f179627c8dd37f41e1be6e3250e19";
   let apiRes = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${apiKey}&units=metric`;
 
   function temp(response) {
     let currTemp = Math.round(response.data.main.temp);
-    let temp = document.querySelector(".number");
-    temp.innerHTML = currTemp;
+    console.log(response.data)
+    let tempe = document.querySelector(".number");
+    let wind = document.querySelector(".wind");
+    tempe.innerHTML = currTemp;
+    let currWind = Math.round(response.data.wind.speed);
+    wind.innerHTML = currWind;
+    description.innerHTML = response.data.weather[0].description;
+    let iconNew = response.data.weather[0].icon 
+    
+    console.log(iconNew)
+    let imgDiv = document.getElementById( "img" ); // access the image using id
+    imgDiv.src = `http://openweathermap.org/img/wn/${iconNew}@2x.png`
   }
 
   function getTemp() {
@@ -101,10 +123,13 @@ function searchCity(event) {
 
   getTemp();
 }
-
-let form = document.querySelector(".form-inline");
-form.addEventListener("submit", searchCity);
-
+function noFunc (eventr) {
+  eventr.preventDefault();
+}
+let form = document.querySelector(".btn");
+form.addEventListener("click", searchCity);
+let formMain = document.querySelector(".form-inline")
+formMain.addEventListener("submit", noFunc)
 
       </script>
     
