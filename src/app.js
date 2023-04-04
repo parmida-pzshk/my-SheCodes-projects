@@ -80,13 +80,11 @@ function getForecast(name) {
   axios.get(apiRes).then(displayForecast);
 }
 
-function searchCity(event) {
-  event.preventDefault();
-  let input = document.querySelector("#inputCity");
-  let editedInput = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+function searchCity(input) {
+  let editedInput = input.charAt(0).toUpperCase() + input.slice(1);
   name.innerHTML = editedInput;
   let apiKey = "b95f179627c8dd37f41e1be6e3250e19";
-  let apiRes = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${apiKey}&units=metric`;
+  let apiRes = `https://api.openweathermap.org/data/2.5/weather?q=${editedInput}&appid=${apiKey}&units=metric`;
 
   function temp(response) {
     let currTemp = Math.round(response.data.main.temp);
@@ -133,11 +131,17 @@ function showCel(event) {
   document.getElementById("cel").style.color = "#272142";
   document.getElementById("fahrenheit").style.color = "#0d6efd";
 }
+function handleSubmit(event) {
+  event.preventDefault();
+  let input = document.querySelector("#inputCity");
+  searchCity(input.value);
+}
 let form = document.querySelector(".btn");
-form.addEventListener("click", searchCity);
+form.addEventListener("click", handleSubmit);
 let formMain = document.querySelector(".form-control");
 formMain.addEventListener("submit", noFunc);
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahren);
 let celLink = document.querySelector("#cel");
 celLink.addEventListener("click", showCel);
+searchCity("Tehran");
