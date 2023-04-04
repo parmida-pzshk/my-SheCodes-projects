@@ -43,7 +43,7 @@ li {
   list-style: none;
   margin-bottom: 5px;
 }
-img {
+.icon {
   margin-left: 40px;
 }
 .others {
@@ -62,7 +62,7 @@ img {
 }
 .weather-temperature .units {
   color: #212121;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 36px;
   line-height: 1;
@@ -75,4 +75,17 @@ img {
 #cel {
   text-decoration: none;
   color: #272142;
+}
+.weather-forecast-day {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.weather-forecast {
+  text-align: center;
+}
+.weather-forecast-temperature-min {
+  font-size: 10px;
+}
+.weather-forecast-temperature-max {
+  font-size: 10px;
 }
