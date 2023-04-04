@@ -22,15 +22,29 @@
   <body>
     <div class="container-fluid">
       <div class="weather-app">
+        <form class="row">
+          <div class="col-6">
+            <label for="inputCity" class="visually-hidden">inputCity</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputCity"
+              placeholder="Search for a City!"
+            />
+          </div>
+          <div class="col-6">
+            <button type="submit" class="btn btn-primary mb-3">Search</button>
+          </div>
+        </form>
         <div class="row">
           <div class="col-6">
-            <h1>Tehran</h1>
+            <h1 class="name">Tehran</h1>
             <ul>
               <li>
-                Last updated <span id="day"></span> <span id="hour"></span> :
-                <span id="minute"></span>
+                Last updated <span id="day"></span>
+                <span id="hour"></span>:<span id="minute"></span>
               </li>
-              <li>Clear Sky</li>
+              <li class="description">Clear Sky</li>
             </ul>
           </div>
           <div class="col-6">
@@ -45,15 +59,17 @@
         <div class="row">
           <div class="col-6">
             <div class="d-flex weather-temperature">
-              <strong id="temperature">12</strong
-              ><span class="units"> °C | °F</span>
+              <strong id="temperature" class="number">12</strong
+              ><span class="units">
+                <a href="" id="cel">°C</a> |
+                <a href="" id="fahrenheit">°F</a></span
+              >
             </div>
           </div>
           <div class="col-6">
-            <ul>
-              <li>Percipitation: 0 %</li>
-              <li>Humidity: 70 %</li>
-              <li>wind: 2 km/h</li>
+            <ul class="others">
+              <li>Humidity: <span class="humidity"></span> %</li>
+              <li>Wind: <span class="wind"></span> km/h</li>
             </ul>
           </div>
         </div>

@@ -9,6 +9,12 @@ body {
   border-radius: 10px;
   font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
 }
+.form-control {
+  margin-left: 2rem;
+}
+.btn {
+  margin-left: 3rem;
+}
 small {
   text-align: center;
   display: block;
@@ -38,11 +44,14 @@ li {
   margin-bottom: 5px;
 }
 img {
-  margin-left: 30px;
+  margin-left: 40px;
+}
+.others {
+  margin-left: 16px;
 }
 .weather-temperature {
   margin-left: 35px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .weather-temperature strong {
   color: #212121;
@@ -58,5 +67,12 @@ img {
   line-height: 36px;
   line-height: 1;
   position: relative;
-  top: -18px;
+  top: -10px;
+}
+#fahrenheit {
+  text-decoration: none;
+}
+#cel {
+  text-decoration: none;
+  color: #272142;
 }
