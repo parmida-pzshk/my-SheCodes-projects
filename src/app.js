@@ -55,6 +55,12 @@ function displayForecast() {
   forecastHtml = forecastHtml + `</div>`;
   forecast.innerHTML = forecastHtml;
 }
+function getForecast(name) {
+  console.log(name);
+  let apiKey = "o2b3t3ea0c2f4ee01156dffb489a3479";
+  let apiRes = `https://api.shecodes.io/weather/v1/forecast?query=${name}&key=${apiKey}`;
+  axios.get(apiRes).then(displayForecast);
+}
 
 function searchCity(event) {
   event.preventDefault();
@@ -83,6 +89,7 @@ function searchCity(event) {
     imgDiv.src = `http://openweathermap.org/img/wn/${iconNew}@2x.png`;
     let humidity = document.querySelector(".humidity");
     humidity.innerHTML = response.data.main.humidity;
+    getForecast(response.data.name);
   }
 
   function getTemp() {
@@ -116,4 +123,3 @@ let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahren);
 let celLink = document.querySelector("#cel");
 celLink.addEventListener("click", showCel);
-displayForecast();
