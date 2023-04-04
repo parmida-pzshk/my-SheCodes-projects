@@ -83,9 +83,6 @@ li {
 .weather-forecast {
   text-align: center;
 }
-.weather-forecast-temperature-min {
-  font-size: 10px;
-}
-.weather-forecast-temperature-max {
+.weather-forecast-temperature {
   font-size: 10px;
 }

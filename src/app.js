@@ -31,6 +31,31 @@ let icon = document.querySelector(".icon");
 let imgDiv = document.getElementById("img"); // access the image using id
 let celsiusDeg = null;
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  let forecastHtml = `<dive class="row">`;
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="col-2">
+              <div class="weather-forecast-day">${day}</div>
+              <img
+              id="img"
+              src="http://openweathermap.org/img/wn/01n@2x.png"
+              width="45px"
+            />
+            <div class="weather-forecast-temperature">
+              <span class="weather-forecast-temperature-max" >18</span>°
+              <span class="weather-forecast-temperature-min">12</span>°
+            </div>
+            </div>
+          </div>`;
+  });
+  forecastHtml = forecastHtml + `</div>`;
+  forecast.innerHTML = forecastHtml;
+}
+
 function searchCity(event) {
   event.preventDefault();
   let input = document.querySelector("#inputCity");
@@ -91,3 +116,4 @@ let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahren);
 let celLink = document.querySelector("#cel");
 celLink.addEventListener("click", showCel);
+displayForecast();
