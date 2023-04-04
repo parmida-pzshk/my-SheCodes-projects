@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
     <title>Document</title>
   </head>
   <body>
@@ -25,7 +26,10 @@
           <div class="col-6">
             <h1>Tehran</h1>
             <ul>
-              <li>Last updated Tuesday 9:58</li>
+              <li>
+                Last updated <span id="day"></span> <span id="hour"></span> :
+                <span id="minute"></span>
+              </li>
               <li>Clear Sky</li>
             </ul>
           </div>
@@ -66,4 +70,5 @@
       </small>
     </div>
   </body>
+  <script src="src/app.js"></script>
 </html>
